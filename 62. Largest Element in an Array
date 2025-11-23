@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main() {
+    int a[] = {10, 50, 20, 90, 70};
+    int n = 5, max = a[0];
+
+    for(int i=1;i<n;i++)
+        if(a[i] > max)
+            max = a[i];
+
+    printf("Largest = %d", max);
+}
