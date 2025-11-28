@@ -1,9 +1,14 @@
 #include <stdio.h>
 int main() {
-    int l,r,i,j,prime; scanf("%d%d",&l,&r);
-    for(i=l;i<=r;i++){
-        prime=1;
-        for(j=2;j<i;j++) if(i%j==0) prime=0;
-        if(prime && i>1) printf("%d ",i);
+    int lower, upper;
+    printf("Enter lower and upper limit: ");
+    scanf("%d %d", &lower, &upper);
+    for(int num = lower; num <= upper; num++) {
+        int flag = 1;
+        if(num <= 1) continue;
+        for(int i = 2; i <= num/2; i++)
+            if(num % i == 0) { flag = 0; break; }
+        if(flag) printf("%d ", num);
     }
+    return 0;
 }
